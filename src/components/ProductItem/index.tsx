@@ -16,7 +16,7 @@ type Props = {
 
 export const ProductItem = ({ data }: Props) => {
 
-  const { state, dispatch } = useContext(Context);
+  const { dispatch } = useContext(Context);
 
   const handleOpenModal = () => {
     dispatch({

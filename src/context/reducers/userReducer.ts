@@ -16,11 +16,9 @@ export const userReducer = (state: UserType, action: ReducerActionType) => {
 
     case actionType.changeName:
       return {...state, name: action.payload.name};
-    break;
 
     case actionType.changeToken:
       return {...state, token: action.payload.token}
-    break;
 
     default:
       return state;

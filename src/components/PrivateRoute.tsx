@@ -8,7 +8,7 @@ type Props = {
 
 export const PrivateRoute = ({ children, ...rest }: Props) => {
 
-    const { state, dispatch } = useContext(Context);
+    const { state } = useContext(Context);
     const token = state.user.token;
 
     const navigate = useNavigate();

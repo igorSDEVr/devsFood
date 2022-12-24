@@ -33,11 +33,9 @@ export const modalReducer = (state: ModalType, action: ReducerActionType) => {
         ingredients: action.payload.ingredients,
         points: action.payload.points
       }
-    break;
 
     case actionType.closeModal:
       return {...state, status: action.payload.status}
-    break;
 
     default:
       return state;

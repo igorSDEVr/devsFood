@@ -1,6 +1,5 @@
 import { useState, Dispatch, SetStateAction, ChangeEvent, useContext } from 'react';
 import * as C from './styled';
-import { Context } from '../../context/Context';
 
 type Props = {
   search: string;
@@ -8,7 +7,6 @@ type Props = {
 };
 
 export const Header = ({ search, onSearch }: Props) => {
-  const { state, dispatch } = useContext(Context);
 
   const [inputActive, setInputActive] = useState(false);
 

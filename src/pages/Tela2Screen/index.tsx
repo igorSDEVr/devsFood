@@ -5,7 +5,7 @@ import { Context } from '../../context/Context';
 
 export const Tela2Screen = () => {
   const navigate = useNavigate();
-  const { state, dispatch } = useContext(Context);
+  const { dispatch } = useContext(Context);
 
   let { name } = useParams();
 

@@ -35,7 +35,6 @@ export const cartReducer =  (state: CartType, action: ReducerActionType) => {
         });
       }
       return {...state}
-    break;
 
     case actionType.changeProduct:
       const productIdToChange = action.payload.key;

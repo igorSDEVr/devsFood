@@ -18,29 +18,3 @@ export const useFetch = <T = unknown>(url: string) => {
   return { data };
 
 };
-
-{/* 
-export default {
-    getCategories: async () => {
-        const res = await api.get('/categories');
-        return res.data;
-    },
-    getProducts: async (category, page, search) => {
-        let fields = {};
-        if(category) {
-            fields.category = category;
-        };
-
-        if(page > 0) {
-            fields.category = page;
-        };
-
-        if(search) {
-            fields.category = search;
-        };
-
-        let queryString = new URLSearchParams(fields).toString();
-        const res = await api.get('/products?' + queryString);
-        return res.data;
-    }
-}; */}

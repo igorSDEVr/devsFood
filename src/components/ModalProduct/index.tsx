@@ -8,7 +8,7 @@ export const ModalProduct = () => {
 
   const { state, dispatch } = useContext(Context);
 
-  const { modal: dataModal, cart: dataCart} = state;
+  const { modal: dataModal } = state;
 
   const handleMinusQt = () => {if(qt > 1) setQt(prev => prev - 1)};
   const handlePlusQt = () => setQt(prev => prev + 1);
