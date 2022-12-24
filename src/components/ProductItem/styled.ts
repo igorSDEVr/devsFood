@@ -8,6 +8,10 @@ export const Container = styled.div`
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     padding: 10px;
+
+    @media (max-width: 450px) {
+        width: 250px;
+    }
 `;
 
 export const ProductsPhotoArea = styled.div`

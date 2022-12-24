@@ -19,6 +19,8 @@ export const Cart =  () => {
     });
   };
 
+//   Meu Carrinho ({cartData.products.length})
+
   return (
     <C.CartArea>
         <C.CartHeader onClick={handleCartClick}>

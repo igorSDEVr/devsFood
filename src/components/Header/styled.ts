@@ -7,11 +7,19 @@ export const Container = styled.div`
     background-color: #136713;
     padding: 20px;
     border-radius: 10px;
+
+    @media (max-width: 450px) {
+        width: 250px;
+    }
 `;
 
 export const Logo = styled.img`
     height: 70px;
     width: auto;
+
+    @media (max-width: 450px) {
+        width: 200px;
+    }
 `;
 
 export const SearchInput = styled.input<{active: boolean}>`
@@ -29,4 +37,8 @@ export const SearchInput = styled.input<{active: boolean}>`
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: 10px center;
+
+    @media (max-width: 450px) {
+        margin-left: 10px;
+    }
 `;

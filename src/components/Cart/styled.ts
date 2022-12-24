@@ -15,6 +15,8 @@ export const CartHeader  = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
+
+
 `;
 
 export const CartIcon = styled.img`
