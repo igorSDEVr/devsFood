@@ -1,14 +1,20 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Context } from '../../context/Context';
 import * as C from './styled';
 
 export const Cart =  () => {
   const { state , dispatch } = useContext(Context);
-  const [show, setShow] = useState<boolean>(true);
+  const [show, setShow] = useState<boolean>(false);
 
   const cartData = state.cart;
 
   const handleCartClick = () => setShow(!show);
+
+  useEffect(() => {
+    if(cartData.products[0].name === '') {
+        cartData.products.shift();
+    }
+  }, [])
     
   const handleProductChange = ( key: number, increaseOrDecreaseQt: boolean) => {
     dispatch({
@@ -18,8 +24,6 @@ export const Cart =  () => {
         }
     });
   };
-
-//   Meu Carrinho ({cartData.products.length})
 
   return (
     <C.CartArea>

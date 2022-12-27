@@ -1,24 +1,22 @@
-import { useState } from 'react';
-import * as C from './styles';
+import * as C from './styled';
 import { Header } from '../../components/Header';
 import { CategoryArea } from '../../components/CategoryArea';
 import { ProductsArea } from '../../components/ProductsArea';
 import { Modal } from '../../components/Modal';
 import { ModalProduct } from '../../components/ModalProduct';
+import { Cart } from '../../components/Cart';
 
 
 export const HomeScreen = () => {
-  
-  const [headerSearch, setHeaderSearch] = useState<string>('');
-
   return (
     <C.Container>
-      <Header search={headerSearch} onSearch={setHeaderSearch} />
+      <Header />
       <CategoryArea />
       <ProductsArea />
       <Modal>
         <ModalProduct/>
       </Modal>
+      <Cart />
     </C.Container>
   );
 };

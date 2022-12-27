@@ -1,4 +1,4 @@
-import { useState, Suspense } from 'react';
+import { Suspense } from 'react';
 import * as C from './styles';
 import { Loading } from '../Loading';
 import { CategoriesType } from '../../types/CategoriesType';
@@ -6,8 +6,7 @@ import { CategoryItem } from '../CategoryItem';
 import { useFetch } from '../../hooks/useFetch';
 
 export const CategoryArea = () => {
-  const [activeCategory, setActiveCategory] = useState(0);
-
+  
   enum endPoints {
     categories = 'categories'
   };
@@ -20,11 +19,10 @@ export const CategoryArea = () => {
       <C.CategoryArea>
         <Suspense fallback={<Loading />}>
           {categoriesData?.result.map(categorie => (
-            <CategoryItem
-              key={categorie.id}
-              data={categorie}
-              active={activeCategory}
-              setActive={setActiveCategory}/>
+            <CategoryItem 
+              key={categorie.id} 
+              data={categorie} 
+              />
           ))}
         </Suspense>
       </C.CategoryArea>

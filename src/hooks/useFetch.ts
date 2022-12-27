@@ -7,14 +7,14 @@ const api = axios.create({
 
 export const useFetch = <T = unknown>(url: string) => {
 
-  const { data } = useQuery<T>(url, async () => {
+  const { data, isLoading } = useQuery<T>(url, async () => {
     const response = await api.get(url);
     
     return response.data;
   }, {
-    suspense: true
+    suspense: true,
+    staleTime: 1000 * 10 * 60 //10 minutes
   });
 
-  return { data };
-
+  return { data, isLoading };
 };

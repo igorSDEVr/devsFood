@@ -14,11 +14,17 @@ type Props = {
   }
 };
 
+const { innerWidth } = window;
+
 export const ProductItem = ({ data }: Props) => {
 
   const { dispatch } = useContext(Context);
-
+  
   const handleOpenModal = () => {
+    if(innerWidth < 660) {
+      alert('Responsividade não finalizada :(')
+    };
+
     dispatch({
         type: 'OPEN_MODAL',
         payload: {

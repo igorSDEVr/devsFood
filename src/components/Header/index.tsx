@@ -1,14 +1,12 @@
-import { useState, Dispatch, SetStateAction, ChangeEvent } from 'react';
+import { useState, useContext, ChangeEvent } from 'react';
 import * as C from './styled';
+import { Context } from '../../context/Context';
 
-type Props = {
-  search: string;
-  onSearch: Dispatch<SetStateAction<string>>;
-};
+export const Header = () => {
+  const [inputActive, setInputActive] = useState<boolean>(false);
+  const { state, dispatch } = useContext(Context);
 
-export const Header = ({ search, onSearch }: Props) => {
-
-  const [inputActive, setInputActive] = useState(false);
+  const search = state.products.search;
 
   const handleInputFocus = () => {
     setInputActive(true);
@@ -21,7 +19,12 @@ export const Header = ({ search, onSearch }: Props) => {
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onSearch(e.target.value);
+    dispatch({
+      type: 'SEARCH_BY_NAME',
+      payload: {
+        search: e.target.value
+      }
+    });
   };
 
   return ( 
@@ -29,13 +32,12 @@ export const Header = ({ search, onSearch }: Props) => {
         <C.Logo src='/assets/logo.png' />
         <C.SearchInput 
             type='text'
-            value={search}
             onChange={handleChange}
             placeholder='Digite um produto'
             onFocus={handleInputFocus}
             onBlur={handleInputBlur}
             active={inputActive}
-            /> 
+        /> 
     </C.Container>
   );
 };

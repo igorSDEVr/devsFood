@@ -34,6 +34,7 @@ export const cartReducer =  (state: CartType, action: ReducerActionType) => {
           ...action.payload.product
         });
       }
+      
       return {...state}
 
     case actionType.changeProduct:

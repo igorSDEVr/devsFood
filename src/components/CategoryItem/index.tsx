@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction } from 'react';
+import { useContext } from 'react';
 import * as C from './styled';
 import { Tooltip } from 'react-tooltip';
+import { Context } from '../../context/Context';
 
 type Props = {
   data: {
@@ -8,14 +9,19 @@ type Props = {
       name: string;
       image: string;
   };
-  active: number;
-  setActive: Dispatch<SetStateAction<number>>
 };
 
-export const CategoryItem = ({ data, active, setActive }: Props) => {
+export const CategoryItem = ({ data }: Props) => {
+  const { state, dispatch } = useContext(Context);
+  const active = state.products.categorie;
 
   const handleCategoryClick = () => {
-    setActive(data.id)
+    dispatch({
+      type: 'SEARCH_BY_CATEGORIE',
+      payload: {
+        categorie: data.id
+      }
+    });
   };
 
   return (

@@ -1,20 +1,19 @@
 import { useContext } from 'react';
-import{ Route, useNavigate } from 'react-router-dom';
+import { LoginScreen } from '../pages/LoginScreen';
 import { Context } from '../context/Context';
 
 type Props = {
     children: JSX.Element;
 };
 
-export const PrivateRoute = ({ children, ...rest }: Props) => {
+export const PrivateRoute = ({ children }: Props) => {
+  const { state } = useContext(Context);
+  const user = state.user.name;
 
-    const { state } = useContext(Context);
-    const token = state.user.token;
+    if (user === ''){
+        alert('REALIZE SEU LOGIN')
+        return <LoginScreen />
+    };
 
-    const navigate = useNavigate();
-    if (!token || token === ''){
-        navigate('/login');
-        return null;
-    }
-    return <Route {...rest }>{children}</Route>
+    return children;
 }; 

@@ -3,24 +3,20 @@ import { ReducerActionType } from '../../types/ReducerActionType';
 
 export const userInitialState: UserType = {
   name: '',
-  token: ''
+  password: ''
 };
 
 enum actionType {
-  changeName = 'CHANGE_NAME',
-  changeToken = 'CHANGE_TOKEN'
+  addUser = 'ADD_USER'
 };
 
 export const userReducer = (state: UserType, action: ReducerActionType) => {
   switch(action.type) {
 
-    case actionType.changeName:
-      return {...state, name: action.payload.name};
-
-    case actionType.changeToken:
-      return {...state, token: action.payload.token}
+    case actionType.addUser:
+      return {...state, name: action.payload.name, password: action.payload.password};
 
     default:
-      return state;
+      return {...state};
   };
 };

@@ -6,8 +6,8 @@ export const Theme = () => {
   return (
     <C.Menu>
       <MenuItem title='LOJA' icon='/assets/store.png' link='/' />
-      <MenuItem title='PEDIDOS' icon='/assets/order.png' link='/orders' />
-      <MenuItem title='MEU-PERFIL' icon='/assets/profile.png' link='/profile' />
+      <MenuItem title='PERFIL' icon='/assets/order.png' link='/profile' />
+      <MenuItem title='LOGIN' icon='/assets/profile.png' link='/login' />
     </C.Menu>
   );
 };

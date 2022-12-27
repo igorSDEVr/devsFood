@@ -12,16 +12,12 @@ type Props = {
 export const MenuItem = ({ title, icon, link }: Props) => {
   const location = useLocation();
 
-  const fix = (title: string) => {
-    return title.replace('-', ' ');
-  };
-
   let isActive = location.pathname === link;
 
   return (
     <C.LinkArea
       id={title}
-      data-tooltip-content={fix(title)}
+      data-tooltip-content={title}
       data-tooltip-place='right'
       active={isActive}
     >
