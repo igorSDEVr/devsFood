@@ -31,7 +31,7 @@ export const ProductsArea = () => {
         }})
       ));
     };
-  }, []);
+  }, [dispatch, products.data.length, productsData?.result.data]);
 
   return (
       <C.Container>
