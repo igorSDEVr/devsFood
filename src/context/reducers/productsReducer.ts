@@ -68,6 +68,7 @@ export const productsReducer = (state: ProductsReducerType, action: ReducerActio
             products.data[index]
           );
         };
+        return null;
       });
 
       products.filteredData.shift();
@@ -93,9 +94,10 @@ export const productsReducer = (state: ProductsReducerType, action: ReducerActio
             products.data[index]
           );
         };
+        return null;
       });
       products.filteredData.shift();
-
+      break;
     default:
       return state;
   };

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { Context } from '../../context/Context';
 import * as C from './styled';
 
@@ -9,12 +9,6 @@ export const Cart =  () => {
   const cartData = state.cart;
 
   const handleCartClick = () => setShow(!show);
-
-  useEffect(() => {
-    if(cartData.products[0].name === '') {
-        cartData.products.shift();
-    }
-  }, [])
     
   const handleProductChange = ( key: number, increaseOrDecreaseQt: boolean) => {
     dispatch({
