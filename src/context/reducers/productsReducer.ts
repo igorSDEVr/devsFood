@@ -97,7 +97,7 @@ export const productsReducer = (state: ProductsReducerType, action: ReducerActio
         return null;
       });
       products.filteredData.shift();
-      break;
+      return {...state}
     default:
       return state;
   };
