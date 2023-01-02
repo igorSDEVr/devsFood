@@ -38,12 +38,14 @@ export const LoginScreen = () => {
             value={nameInput}
             onChange={handleNameChange}
             placeholder='Digite seu nome'
+            autoFocus
           />
           <C.FormInput
             type='password'
             value={passwordInput}
             onChange={handlePasswordChange}
             placeholder='digite sua senha'
+            autoComplete='abc'
           />
 
           <C.ButtonInput onClick={handleLogin}>

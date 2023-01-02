@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Context } from '../../context/Context';
 import * as C from './styled';
 
@@ -18,6 +18,15 @@ export const Cart =  () => {
         }
     });
   };
+
+  useEffect(() => {
+    if(cartData.products.length > 0) {
+        if(cartData.products[0].name === '') {
+            cartData.products.shift();
+        };
+    };
+
+  }, [cartData]);
 
   return (
     <C.CartArea>

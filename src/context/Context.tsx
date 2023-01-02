@@ -20,7 +20,7 @@ export const Context = createContext<ContextType>({
   dispatch: () => null
 });
 
-const mainReducer = (state: InitialStateType, action: ReducerActionType): any => ({
+const mainReducer = (state: InitialStateType, action: ReducerActionType) => ({
   user: userReducer(state.user, action),
   cart: cartReducer(state.cart, action),
   modal: modalReducer(state.modal, action),
