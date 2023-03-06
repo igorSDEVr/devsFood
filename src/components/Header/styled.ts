@@ -28,7 +28,7 @@ export const Logo = styled.img`
 
 export const SearchInput = styled.input<{active: boolean}>`
     height: 50px;
-    width: ${props => props.active ? '85%' : '0'};
+    width: ${props => props.active ? '75%' : '0'};
     cursor: ${props => props.active ? 'text' : 'pointer'};
     font-size: 15px;
     background-color: #fff;
@@ -41,12 +41,9 @@ export const SearchInput = styled.input<{active: boolean}>`
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: 10px center;
+    margin-left: 10px;
 
     @media (max-width: 750px) {
         margin-top: 30px;
-    }
-
-    @media (max-width: 450px) {
-        margin-left: 10px;
     }
 `;

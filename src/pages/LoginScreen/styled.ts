@@ -14,7 +14,7 @@ export const Form = styled.form`
   align-items: center;
   flex-direction: column;
   height: 50%;
-  width: 50%;
+  width: 70%;
   background-color: rgba(0.8, 0.8, 0.8, 0.5);
 `;
 
@@ -44,8 +44,8 @@ export const FormInput = styled.input`
   margin: 30px;
   display: block;
   height: 15px;
-  max-width: 250px;
-  padding: 10px;
+  width :100%;
+  padding: 10px 0;
 `;
 
 export const ButtonInput = styled.button`

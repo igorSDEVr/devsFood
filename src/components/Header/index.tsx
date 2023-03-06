@@ -30,7 +30,7 @@ export const Header = () => {
   return ( 
     <C.Container>
         <C.Logo src='/assets/logo.png' />
-        <C.SearchInput 
+        <C.SearchInput
             type='text'
             onChange={handleChange}
             placeholder='Digite um produto'

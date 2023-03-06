@@ -28,7 +28,8 @@ export const productsInitialState: ProductsReducerType = {
 enum actionType {
   addProducts = 'ADD_PRODUCTS',
   searchByName = 'SEARCH_BY_NAME',
-  searchByCategorie = 'SEARCH_BY_CATEGORIE'
+  searchByCategorie = 'SEARCH_BY_CATEGORIE',
+  resetCategory = 'RESET_CATEGORY'
 };
 
 export const productsReducer = (state: ProductsReducerType, action: ReducerActionType) => {
@@ -98,6 +99,11 @@ export const productsReducer = (state: ProductsReducerType, action: ReducerActio
       });
       products.filteredData.shift();
       return {...state}
+
+    case 'RESET_CATEGORY':
+      products.isFilteredList = false;
+      return state;
+
     default:
       return state;
   };

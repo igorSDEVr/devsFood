@@ -7,8 +7,7 @@ import { ModalProduct } from '../../components/ModalProduct';
 import { Cart } from '../../components/Cart';
 
 
-export const HomeScreen = () => {
-  return (
+export const HomeScreen = () => (
     <C.Container>
       <Header />
       <CategoryArea />
@@ -18,5 +17,4 @@ export const HomeScreen = () => {
       </Modal>
       <Cart />
     </C.Container>
-  );
-};
+);
