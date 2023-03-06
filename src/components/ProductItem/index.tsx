@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import * as C from './styled';
 import { Context } from '../../context/Context';
 
+
 type Props = {
   data: {
     id: number;

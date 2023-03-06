@@ -8,7 +8,10 @@ export const Menu = styled.div<{ show: boolean }>`
   flex-direction: column;
   background-color: #136713;
   transition: 0.5s;
-  margin-left: ${props=>props.show ? '0' : '-80px' };
+  
+  @media (max-width: 500px) {
+    margin-left: ${props=>props.show ? '0' : '-80px'};
+  }
 `;
 
 export const BtnToggle = styled.button`
